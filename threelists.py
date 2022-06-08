@@ -48,7 +48,7 @@ answer=input("Would you like to play? ")
 answer=answer.lower()
 if 'n' in answer: 
     Game=False 
-    break
+    
     
 
 while True: 
@@ -80,3 +80,5 @@ answer=input('Do you want to play again?')
 if 'n' or 'N' in answer:
     Game=False
     print('Thank you for playing, please come again!')
+
+#jdjkfhdjfbdjhgfdjhfgjhksdgsjkhfgsjdh
