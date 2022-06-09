@@ -10,7 +10,7 @@ import code
 import datetime
 from ctypes.wintypes import WORD 
 
-
+date=datetime.datetime.now()
 os.system ('clear')
  
 Game = True 
@@ -45,8 +45,8 @@ except:
 
 if choice == 1:
     with open ('instructions.txt', 'r') as f: #instructions tab
-     f_contents = f.read()
-     print(f_contents)
+        f_contents = f.read()
+        print(f_contents)
     
 
 def selectNum(choice):
@@ -107,9 +107,9 @@ if (choice == 4):
         count = count + 1
 
 if choice == 5:
- date=datetime.datetime.now()
- print(date)
- print(date.strftime("%m-%d-%Y"))
+ 
+    print(date)
+    print(date.strftime("%m-%d-%Y"))
 
 name="Riya"
 sce=320
