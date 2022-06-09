@@ -1,0 +1,18 @@
+Hello
+Welcome to 'Guess the Number'! 
+
+How to Play Level 1: 
+1. pick a random number from 1-25 and type it in
+2. you have 5 tries to guess correctly
+3. if you get it within 5, you can move on to Lvl. 2
+
+
+How to Play Level 2:
+1. pick a random number from 1-50 and type it in
+2. you have 5 tries to guess correctly
+3. if you get it within 5, you can move on to Lvl. 3
+
+How to Play Level 3: 
+1. pick a random number from 1-100 and type it in
+2. you have 5 tries to guess correctly
+3. after you've completed the game, click the scoreboard on the main menu to see if you placed

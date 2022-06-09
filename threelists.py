@@ -4,6 +4,7 @@
 from ctypes.wintypes import WORD
 import os
 import random 
+import code 
 
 
 os.system ('clear')
@@ -45,7 +46,7 @@ while Game == True: #Menu
 choice=input('Would you like to play game 1,2, or 3?')
 try: 
         choice=int(choice)
-        if choice < 1 and choice > 3: 
+        if choice > 1 and choice <= 3: 
          print('select 1,2,or 3')
 except: 
          print('sorry')
