@@ -24,7 +24,7 @@ screen=pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("My First Game") 
 scoreo = 0 
 scorex = 0
-
+clock = pygame.time.Clock()
 SIZE = 3
 markers = [] #control cells
 MxMy = (0,0) #clicks
@@ -45,6 +45,13 @@ mainTitle="Circle eats Square Menu"
 screen=pygame.display.set_mode((WIDTH,HEIGHT)) 
 pygame.display.set_caption("Tic Tac Te")  #change the title of my window
 backgrnd=colors.get("green")
+namebox = pygame.Rect(WIDTH/2.5, HEIGHT//4,WIDTH//2, HEIGHT//5)
+pygame.draw.rect(namebox)
+run = True #run the while loop 
+user_name = ''
+nameClr = (0,105,105) #text of the name 
+bxClr = (200,200,200)
+pygame.display.set_caption('Get Name')
 
 #game Variable
 
@@ -123,6 +130,26 @@ def checkWinner():
             gameOver = True 
             winner = 0 
               
+
+def namebox():
+    while run: 
+     for event in pygame.event.get():
+        if event.type==pygame.QUIT:
+            #Menu(mainTitle,messageMenu)
+            pygame.quit()
+            sys.exit()
+            print('You quit')
+        if event.type == pygame.MOUSEBUTTONDOWN: 
+            #draw box here 
+         if event.type == pygame.KEYDOWN:
+            if event == pygame.K_RETURN:
+                print('name is in')
+            
+            if event == pygame.K_BACKSPACE: 
+                print('user_name = username[:-1]')
+            else: 
+                print('user_name += event.unicode')
+    
     
     
 def gameEnd():
@@ -149,6 +176,7 @@ def gameEnd():
 
 zero_Array()
 while Game:
+    clock.tick(60)
     screen.fill(backgrnd)
     draw_grid()
     draw_Markers()
@@ -173,5 +201,5 @@ while Game:
             
             
             
-    pygame.display.update() 
-    pygame.time.delay(500)
+    pygame.display.update
+    clock.tick(60)
