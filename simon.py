@@ -85,7 +85,16 @@ def main():
         scoreRect.topleft = (WINDOWWIDTH - 100, 10)
         DISPLAYSURF.blit(scoreSurf, scoreRect)
 
-        DISPLAYSURF.blit(infoSurf, infoRect)
+        DISPLAYSURF.blit(infoSurf, infoRect) 
+
+        #if score > 1: 
+            #Game = False
+            #coreSurf = BASICFONT.render('Game over, please go to level 2')
+            #DISPLAYSURF.blit(coreSurf)
+            #DISPLAYSURF.blit(infoSurf)
+
+
+            
 
         checkForQuit()
         for event in pygame.event.get(): # event handling loop
@@ -218,10 +227,10 @@ def drawButtons():
     pygame.draw.rect(DISPLAYSURF, BLUE,   BLUERECT)
     pygame.draw.rect(DISPLAYSURF, RED,    REDRECT)
     pygame.draw.rect(DISPLAYSURF, GREEN,  GREENRECT)
-    #DISPLAYSURF.blit(im1,(BUTTONSIZE//2-25+YELLOWRECT.x,BUTTONSIZE//2-25+YELLOWRECT.y))
-    #DISPLAYSURF.blit(im2,(100,100))
-    #DISPLAYSURF.blit(im3,(100,100))
-    #DISPLAYSURF.blit(im4,(100,100))
+    DISPLAYSURF.blit(im1,(BUTTONSIZE//2-25+YELLOWRECT.x,BUTTONSIZE//2-25+YELLOWRECT.y))
+    DISPLAYSURF.blit(im2,(BUTTONSIZE//2-25+BLUERECT.x,BUTTONSIZE//2-25+BLUERECT.y))
+    DISPLAYSURF.blit(im3,(BUTTONSIZE//2-25+REDRECT.x,BUTTONSIZE//2-25+REDRECT.y))
+    DISPLAYSURF.blit(im4,(BUTTONSIZE//2-25+GREENRECT.x,BUTTONSIZE//2-25+GREENRECT.y))
 
 
 def changeBackgroundAnimation(animationSpeed=40):
