@@ -1,0 +1,5 @@
+Name     Date      Score
+Riya     06/22/22  97
+M        06/22/22  91
+Pickle   06/15/22  86
+Eleven   06/18     79
