@@ -10,7 +10,7 @@ it will repeat the first signal and then add onemore.
 Repeat those two signals in the same order.
 it will continue to play the sequence and add one.Continue to repeat Simon for as long as you can!
 
-In level 1, it will go until you reach a score of 10 
-Then, you should go to level 2, where it will go until you want to stop 
+Level one has pictures of hearts,stars,peace signs, and flowers
+ you can go to level 2 if you want, where there are other images 
 
 Have fun!
