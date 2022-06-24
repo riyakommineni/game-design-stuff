@@ -53,7 +53,7 @@ im4 = pygame.transform.scale(im4,(imgsize, imgsize))
 
 
 def main():
-    global FPSCLOCK, DISPLAYSURF, BASICFONT, BEEP1, BEEP2, BEEP3, BEEP4
+    global FPSCLOCK, DISPLAYSURF, BASICFONT 
 
     pygame.init()
     FPSCLOCK = pygame.time.Clock()
@@ -62,6 +62,8 @@ def main():
 
     BASICFONT = pygame.font.Font('freesansbold.ttf', 16)
     infoSurf = BASICFONT.render('Have fun!', 1, DARKGRAY)
+    
+    
     infoRect = infoSurf.get_rect()
     infoRect.topleft = (10, WINDOWHEIGHT - 25)
 
@@ -75,7 +77,8 @@ def main():
     # when False, the pattern is playing. when True, waiting for the player to click a colored button:
     waitingForInput = False
 
-    while True: # main game loop
+    while True:
+         # main game loop
         clickedButton = None # button that was clicked (set to YELLOW, RED, GREEN, or BLUE)
         DISPLAYSURF.fill(bgColor)
         drawButtons()
@@ -87,11 +90,13 @@ def main():
 
         DISPLAYSURF.blit(infoSurf, infoRect) 
 
-        #if score > 1: 
-            #Game = False
-            #coreSurf = BASICFONT.render('Game over, please go to level 2')
-            #DISPLAYSURF.blit(coreSurf)
-            #DISPLAYSURF.blit(infoSurf)
+        
+
+         
+
+
+
+            
 
 
             
@@ -147,10 +152,18 @@ def main():
                 score = 0
                 pygame.time.wait(1000)
                 changeBackgroundAnimation()
+                
+
             
 
         pygame.display.update()
         FPSCLOCK.tick(FPS)
+
+    
+        
+
+
+ 
 
 
        
