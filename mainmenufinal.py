@@ -21,7 +21,7 @@ screen=pygame.display.set_mode((WIDTH,HEIGHT))
 pygame.display.set_caption("My First Game")  #change the title of my window
 
 #Define Lists and Dict
-colors={"white":(255,255,255),"pink":(255,0,255),"blue":(0,0,255),"limeGreen":(153,255,51),
+colors={"white":(255,255,255),"pink":(255,0,255),"blue":(0,0,255),"limeGreen":(153,255,51),#there's like 500 lines of colors here lol
 "RED" : (255, 0, 0),
 "GREEN" : (0, 255, 0),
 "BLUE" : (0, 0,255),
@@ -545,7 +545,7 @@ clock = pygame.time.Clock()
 
 #boxes for menu
 Bx=WIDTH//3
-Button_menu=pygame.Rect(Bx, 150, WIDTH//4, 40)
+Button_menu=pygame.Rect(Bx, 150, WIDTH//4, 40)     #shape of boxes
 Button_instruct=pygame.Rect(Bx, 150, WIDTH//4, 40)
 Button_settings=pygame.Rect(Bx, 200, WIDTH//4, 40)
 Button_Game1=pygame.Rect(Bx, 250, WIDTH//4, 40)
@@ -563,12 +563,12 @@ Button_sound=pygame.Rect(Bx, 250, WIDTH//3, 40)
 
 
 
-bg=pygame.image.load('final images/Background-clouds_800x553.jpg')
+bg=pygame.image.load('final images/Background-clouds_800x553.jpg') #didn't end up using this but ok
 
 
 
 cx=350
-cy=350
+cy=350  
 rad=25
 speed=2
 ibox = rad*math.sqrt(2)
@@ -581,17 +581,17 @@ my = 0
 
 #Game Variables 
 FPS = 30
-FLASHSPEED = 500 # in milliseconds
-FLASHDELAY = 200 # in milliseconds
+FLASHSPEED = 500 
+FLASHDELAY = 200 
 BUTTONSIZE = 200
 BUTTONGAPSIZE = 20
 TIMEOUT = 4 # seconds before game over if no button is pushed.
 
-#                R    G    B
-WHITE        = (255, 255, 255)
-BLACK        = (  0,   0,   0)
-BRIGHTRED    = (255,   0,   0)
-RED          = (230, 177, 225)
+
+WHITE        = (255, 255, 255)  #score color
+BLACK        = (  0,   0,   0) #original background
+BRIGHTRED    = (255,   0,   0) #flash
+RED          = (230, 177, 225) #not really red, more pink
 BRIGHTGREEN  = (  0, 255,   0)
 GREEN        = ( 8, 140, 55)
 BRIGHTBLUE   = (  0,   0, 255)
@@ -604,7 +604,7 @@ bgColor = BLACK
 XMARGIN = int((WIDTH - (2 * BUTTONSIZE) - BUTTONGAPSIZE) / 2)
 YMARGIN = int((HEIGHT - (2 * BUTTONSIZE) - BUTTONGAPSIZE) / 2)
 
-# Rect objects for each of the four buttons
+# Rectangles for each of the four buttons
 YELLOWRECT = pygame.Rect(XMARGIN, YMARGIN, BUTTONSIZE, BUTTONSIZE) 
 
 BLUERECT = pygame.Rect(XMARGIN + BUTTONSIZE + BUTTONGAPSIZE, YMARGIN, BUTTONSIZE, BUTTONSIZE)
@@ -614,7 +614,7 @@ REDRECT = pygame.Rect(XMARGIN, YMARGIN + BUTTONSIZE + BUTTONGAPSIZE, BUTTONSIZE,
 
 GREENRECT = pygame.Rect(XMARGIN + BUTTONSIZE + BUTTONGAPSIZE, YMARGIN + BUTTONSIZE + BUTTONGAPSIZE, BUTTONSIZE, BUTTONSIZE)
     
-imgsize = 50
+imgsize = 50  #all of the images for the game. had to make them way smaller than the original lolllll
 im1 = pygame.image.load('final images/flower-removebg-preview.png')
 im1 = pygame.transform.scale(im1,(imgsize, imgsize))
 im2 = pygame.image.load('final images/heart-removebg-preview.png')
@@ -641,7 +641,7 @@ backgrnd=colors.get("limeGreen")
 run = True
 Game = False
 
-def Menu(Title, message,MENU):
+def Menu(Title, message,MENU):  
     
     textTitle = TITLE_FONT.render(Title, 1, colors.get("blue"))
     screen.fill(colors.get('white'))
@@ -772,7 +772,7 @@ def settings():
                 mx = mousePos[0]
                 my = mousePos[1]
                 if Button_colors.collidepoint((mx, my)):
-                    print("Change colors")
+                    print("Change button colors")
                 if Button_size.collidepoint((mx, my)):
                     print("Change size")
                 if Button_sound.collidepoint((mx, my)):
@@ -781,7 +781,7 @@ def settings():
                 #     return False
     
 
-def Game_1():
+def Game_1(): #this literally took forever
     
     def main():
      global FPSCLOCK, DISPLAYSURF, BASICFONT 
@@ -800,7 +800,7 @@ def Game_1():
 
     
 
-     # Initialize some variables for a new game
+     # Variables
      pattern = [] # stores the pattern of colors
      currentStep = 0 # the color the player must push next
      lastClickTime = 0 # timestamp of the player's last button push
@@ -819,7 +819,7 @@ def Game_1():
          scoreRect.topleft = (WIDTH - 100, 10)
          DISPLAYSURF.blit(scoreSurf, scoreRect)
 
-         DISPLAYSURF.blit(infoSurf, infoRect) 
+         DISPLAYSURF.blit(infoSurf, infoRect)  #tried to have a display message here but it didn't work
 
          
         
@@ -835,7 +835,7 @@ def Game_1():
 
             
 
-         checkForQuit()
+         checkForQuit() #also tried to exit from here but that didn't work either
          for event in pygame.event.get(): # event handling loop
              if event.type == MOUSEBUTTONUP:
                  mousex, mousey = event.pos
@@ -876,7 +876,7 @@ def Game_1():
                      waitingForInput = False
                      currentStep = 0 # reset back to first step
 
-             elif (clickedButton and clickedButton != pattern[currentStep]) or (currentStep != 0 and time.time() - TIMEOUT > lastClickTime):
+             elif (clickedButton and clickedButton != pattern[currentStep]) or (currentStep != 0 and time.time() - TIMEOUT > lastClickTime): #score goes back to 0
                  # pushed the incorrect button, or has timed out
                  gameOverAnimation()
                  # reset the variables for a new game:
@@ -915,7 +915,7 @@ def Game_1():
  
  
  
-    def flashButtonAnimation(color, animationSpeed=50):
+    def flashButtonAnimation(color, animationSpeed=50): #gives the pattern
      if color == YELLOW:
         
          flashColor = BRIGHTYELLOW
@@ -950,7 +950,7 @@ def Game_1():
      flashSurf = flashSurf.convert_alpha()
      r, g, b = flashColor
     
-     for start, end, step in ((0, 255, 1), (255, 0, -1)): # animation loop
+     for start, end, step in ((0, 255, 1), (255, 0, -1)): # animation loop #
          for alpha in range(start, end, animationSpeed * step):
              checkForQuit()
              DISPLAYSURF.blit(origSurf, (0, 0))
@@ -963,7 +963,7 @@ def Game_1():
      pygame.display.update()
 
 
-    def drawButtons():
+    def drawButtons(): #added images in here
      pygame.draw.rect(DISPLAYSURF, YELLOW, YELLOWRECT) 
      pygame.draw.rect(DISPLAYSURF, BLUE,   BLUERECT)
      pygame.draw.rect(DISPLAYSURF, RED,    REDRECT)
@@ -1001,7 +1001,7 @@ def Game_1():
 
 
 
-    def gameOverAnimation(color=WHITE, animationSpeed=50):
+    def gameOverAnimation(color=WHITE, animationSpeed=50): 
      # play all beeps at once, then flash the background
      origSurf = DISPLAYSURF.copy()
      flashSurf = pygame.Surface(DISPLAYSURF.get_size())
@@ -1041,7 +1041,7 @@ def Game_1():
     
     
     
-def Game_2():
+def Game_2(): #didn't take as long because i already did game 1; copy and pasted except for images and colors
     
     def main():
      global FPSCLOCK, DISPLAYSURF, BASICFONT 
@@ -1220,7 +1220,7 @@ def Game_2():
      pygame.display.update()
 
 
-    def drawButtons():
+    def drawButtons(): #only main change is images 
      pygame.draw.rect(DISPLAYSURF, YELLOW, YELLOWRECT) 
      pygame.draw.rect(DISPLAYSURF, BLUE,   BLUERECT)
      pygame.draw.rect(DISPLAYSURF, RED,    REDRECT)
